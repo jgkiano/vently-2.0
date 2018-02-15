@@ -11,13 +11,13 @@ const mainNavigatorOptions = {
 
 const MainNavigator = StackNavigator({
 
-    firstEmailRegistration: { screen: Screens.FirstEmailRegistrationScreen },
 
     init: { screen: Screens.InitScreen },
     welcome: { screen: Screens.WelcomeScreen },
     login: { screen: Screens.LoginScreen },
 
-    // firstEmailRegistration: { screen: Screens.FirstEmailRegistrationScreen }
+    firstEmailRegistration: { screen: Screens.FirstEmailRegistrationScreen },
+    secondEmailRegistration: { screen: Screens.SecondEmailRegistrationScreen },
 
 }, mainNavigatorOptions);
 
