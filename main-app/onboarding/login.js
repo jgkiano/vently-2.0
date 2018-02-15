@@ -40,7 +40,7 @@ class LoginScreen extends Component {
                     <Text style={normalTextStyle}>or</Text>
                 </View>
                 <View>
-                    <Button iconLeft style={emailButtonStyle}>
+                    <Button onPress={() => navigation.navigate('emailLogin')} iconLeft style={emailButtonStyle}>
                         <Icon android='md-mail' ios="ios-mail" style={iconStyle} />
                         <Text style={buttonTextStyle}>Login with Email</Text>
                     </Button>

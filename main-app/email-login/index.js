@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { Item, Label, Input } from 'native-base';
 import { BackButton, KeyBoardSpacer, FullButton } from './components';
 
-class SecondEmailRegistrationScreen extends Component {
+class EmailLoginScreen extends Component {
     render() {
         const {
             parentStyle,
@@ -23,14 +23,12 @@ class SecondEmailRegistrationScreen extends Component {
                 <View style={formContainer}>
                     <BackButton onPress={() => navigation.goBack()} />
                     <View>
-                        <Text style={titleStyle}>Create an account</Text>
+                        <Text style={titleStyle}>Login to Vently</Text>
                     </View>
                     <View style={normalInputContainer}>
-                        <Item error>
-                            <Label style={labelStyle}>Phone Number</Label>
+                        <Item floatingLabel error>
+                            <Label style={labelStyle}>Email address</Label>
                             <Input
-                                placeholderTextColor="#BDBDBD"
-                                placeholder="0700110590"
                                 autoFocus
                                 autoCapitalize="none"
                                 autoCorrect={false}
@@ -39,19 +37,8 @@ class SecondEmailRegistrationScreen extends Component {
                         </Item>
                     </View>
                     <View style={normalInputContainer}>
-                        <Item floatingLabel>
+                        <Item floatingLabel error>
                             <Label style={labelStyle}>Password</Label>
-                            <Input
-                                secureTextEntry
-                                keyboardType="email-address"
-                                autoCapitalize="none"
-                                autoCorrect={false}
-                            />
-                        </Item>
-                    </View>
-                    <View style={normalInputContainer}>
-                        <Item floatingLabel>
-                            <Label style={labelStyle}>Confirm Password</Label>
                             <Input
                                 secureTextEntry
                                 keyboardType="email-address"
@@ -62,9 +49,9 @@ class SecondEmailRegistrationScreen extends Component {
                     </View>
                 </View>
                 <View style={errorContainerStyle}>
-                    <Text style={errorTextStyle}>Phone number already in use</Text>
+                    <Text style={errorTextStyle}>Sorry, the credentials you've provided are not valid. Please try again</Text>
                 </View>
-                <FullButton text="CREATE YOUR ACCOUNT" />
+                <FullButton text="LOGIN" />
                 <KeyBoardSpacer />
             </View>
         )
@@ -108,4 +95,4 @@ const styles = {
 
 }
 
-export default SecondEmailRegistrationScreen;
+export default EmailLoginScreen;
