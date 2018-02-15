@@ -5,7 +5,7 @@ import { Button, Icon } from 'native-base';
 
 class LoginScreen extends Component {
     render() {
-        const { assets } = this.props;
+        const { assets, navigation } = this.props;
         const {
             parentContainerStyle,
             imageStyle,
@@ -47,8 +47,8 @@ class LoginScreen extends Component {
                 </View>
                 <View style={bottomTextContainerStyle}>
                     <Text style={textStyle}>No account? </Text>
-                    <TouchableOpacity>
-                        <Text style={textButtonStyle}>Sign up here.</Text>
+                    <TouchableOpacity onPress={() => navigation.navigate('firstEmailRegistration')}>
+                        <Text style={textButtonStyle}>Create an account.</Text>
                     </TouchableOpacity>
                 </View>
             </View>
