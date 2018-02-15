@@ -10,6 +10,7 @@ const mainNavigatorOptions = {
 };
 
 const MainNavigator = StackNavigator({
+    init: { screen: Screens.InitScreen },
     welcome: { screen: Screens.WelcomeScreen },
     login: { screen: Screens.LoginScreen }
 }, mainNavigatorOptions);
