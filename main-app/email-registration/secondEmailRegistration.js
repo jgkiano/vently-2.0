@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Keyboard } from 'react-native';
 import { Item, Label, Input } from 'native-base';
 import { BackButton, KeyBoardSpacer, FullButton } from './components';
 
 class SecondEmailRegistrationScreen extends Component {
+    componentWillMount() {
+        Keyboard.dismiss();
+    }
     render() {
         const {
             parentStyle,
@@ -31,10 +34,10 @@ class SecondEmailRegistrationScreen extends Component {
                             <Input
                                 placeholderTextColor="#BDBDBD"
                                 placeholder="0700110590"
-                                autoFocus
                                 autoCapitalize="none"
                                 autoCorrect={false}
-                                keyboardType="email-address"
+                                keyboardType="phone-pad"
+                                autoFocus
                             />
                         </Item>
                     </View>
@@ -64,7 +67,7 @@ class SecondEmailRegistrationScreen extends Component {
                 <View style={errorContainerStyle}>
                     <Text style={errorTextStyle}>Phone number already in use</Text>
                 </View>
-                <FullButton text="CREATE YOUR ACCOUNT" />
+                <FullButton onPress={() => navigation.navigate('phoneVerification')} text="CREATE YOUR ACCOUNT" />
                 <KeyBoardSpacer />
             </View>
         )

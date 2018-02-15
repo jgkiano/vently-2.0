@@ -18,9 +18,10 @@ const MainNavigator = StackNavigator({
 
     firstEmailRegistration: { screen: Screens.FirstEmailRegistrationScreen },
     secondEmailRegistration: { screen: Screens.SecondEmailRegistrationScreen },
+    phoneVerification: { screen: Screens.PhoneVerificationScreen },
 
     emailLogin: { screen: Screens.EmailLoginScreen }
-    
+
 }, mainNavigatorOptions);
 
 export default MainNavigator;
