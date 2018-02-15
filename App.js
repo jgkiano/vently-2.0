@@ -24,12 +24,12 @@ class Vently extends Component {
     }
 
     _loadImages = async () => {
-        const images = [
-            require('./main-app/onboarding/assets/vently-logo.png'),
-        ];
-        for (let image of images) {
-            await Asset.fromModule(image).downloadAsync();
-        }
+        // const images = [
+        //     require('./main-app/onboarding/assets/vently-logo.png'),
+        // ];
+        // for (let image of images) {
+        //     await Asset.fromModule(image).downloadAsync();
+        // }
         return true;
     }
 

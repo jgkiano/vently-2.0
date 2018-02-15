@@ -110,7 +110,7 @@ const styles = {
     textTitleStyle: {
         fontFamily: 'nbold',
         fontSize: 22,
-        color: '#030303',
+        color: '#424242',
         marginBottom: 20
     },
     contentTextStyle: {
