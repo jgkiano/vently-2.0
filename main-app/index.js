@@ -5,6 +5,7 @@ import FirstEmailRegistrationScreen from './email-registration';
 import SecondEmailRegistrationScreen from './email-registration/secondEmailRegistration';
 import EmailLoginScreen from './email-login';
 import PhoneVerificationScreen from './verify-phone';
+import InterestsSelectionScreen from './interests-selection';
 
 export {
     InitScreen,
@@ -13,5 +14,6 @@ export {
     FirstEmailRegistrationScreen,
     SecondEmailRegistrationScreen,
     EmailLoginScreen,
-    PhoneVerificationScreen
+    PhoneVerificationScreen,
+    InterestsSelectionScreen
 }

@@ -5,12 +5,13 @@ import * as Screens from './main-app';
 const mainNavigatorOptions = {
     headerMode: 'none',
     cardStyle: {
-        backgroundColor: 'white'
+        backgroundColor: '#FAFAFA'
     },
 };
 
 const MainNavigator = StackNavigator({
 
+    interestsSelections: { screen: Screens.InterestsSelectionScreen },
 
     init: { screen: Screens.InitScreen },
     welcome: { screen: Screens.WelcomeScreen },
@@ -20,7 +21,9 @@ const MainNavigator = StackNavigator({
     secondEmailRegistration: { screen: Screens.SecondEmailRegistrationScreen },
     phoneVerification: { screen: Screens.PhoneVerificationScreen },
 
-    emailLogin: { screen: Screens.EmailLoginScreen }
+    emailLogin: { screen: Screens.EmailLoginScreen },
+
+
 
 }, mainNavigatorOptions);
 
