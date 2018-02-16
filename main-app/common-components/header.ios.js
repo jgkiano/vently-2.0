@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
+import { View, Text, TouchableOpacity, Platform, StatusBar } from 'react-native';
 
 class Header extends Component {
 
@@ -56,13 +56,14 @@ const styles = {
         borderBottomWidth: 1,
         borderColor: '#E0E0E0',
         flexDirection: 'row',
-        height: 57,
+        height: 65,
         alignItems: 'flex-end',
         paddingBottom: 5,
         paddingHorizontal: 15
     },
     leftContainerStyle: {
-        alignItems: 'flex-start'
+        alignItems: 'flex-start',
+        flex: 0.5
     },
     centerContainerStyle: {
         flex: 1,
@@ -70,7 +71,8 @@ const styles = {
         alignItems: 'center'
     },
     rightContainerStyle: {
-        alignItems: 'flex-end'
+        alignItems: 'flex-end',
+        flex: 0.5
     }
 }
 

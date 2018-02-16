@@ -13,11 +13,11 @@ class BottomNavigation extends Component {
         const activeColor = '#0076FF';
         const inactiveColor = '#424242';
         const { active } = this.props;
-        const { parentStyle, tabConatinerStyle } = styles;
+        const { parentStyle, tabConatinerStyle, iconContainerStyle } = styles;
         return (
             <View style={parentStyle}>
                 <View style={tabConatinerStyle}>
-                    <TouchableOpacity onPress={() => this.handlePress('browse')}>
+                    <TouchableOpacity style={iconContainerStyle} onPress={() => this.handlePress('browse')}>
                         <Entypo
                             name="home"
                             size={24}
@@ -26,7 +26,7 @@ class BottomNavigation extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={tabConatinerStyle}>
-                    <TouchableOpacity onPress={() => this.handlePress('map')}>
+                    <TouchableOpacity style={iconContainerStyle} onPress={() => this.handlePress('map')}>
                         <Entypo
                             name="map"
                             size={24}
@@ -35,7 +35,7 @@ class BottomNavigation extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={tabConatinerStyle}>
-                    <TouchableOpacity onPress={() => this.handlePress('tickets')}>
+                    <TouchableOpacity style={iconContainerStyle} onPress={() => this.handlePress('tickets')}>
                         <Entypo
                             name="ticket"
                             size={24}
@@ -44,11 +44,11 @@ class BottomNavigation extends Component {
                     </TouchableOpacity>
                 </View>
                 <View style={tabConatinerStyle}>
-                    <TouchableOpacity onPress={() => this.handlePress('profile')}>
+                    <TouchableOpacity style={iconContainerStyle} onPress={() => this.handlePress('profile')}>
                         <Feather
-                            name="user" 
-                            size={24} 
-                            color={ active === 'profile' ? activeColor : inactiveColor } 
+                            name="user"
+                            size={24}
+                            color={ active === 'profile' ? activeColor : inactiveColor }
                         />
                     </TouchableOpacity>
                 </View>
@@ -59,7 +59,7 @@ class BottomNavigation extends Component {
 
 const styles = {
     parentStyle: {
-        paddingVertical: 7,
+        paddingVertical: 5,
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
@@ -69,6 +69,9 @@ const styles = {
     },
     tabConatinerStyle: {
         flexDirection: 'row'
+    },
+    iconContainerStyle: {
+        padding: 5
     }
 }
 
