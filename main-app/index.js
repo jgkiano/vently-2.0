@@ -7,7 +7,12 @@ import EmailLoginScreen from './email-login';
 import PhoneVerificationScreen from './verify-phone';
 import InterestsSelectionScreen from './interests-selection';
 
-import HomeScreen from './home';
+// import HomeScreen from './home';
+
+import BrowseTab from './home-tabs/browse-tab';
+import MapTab from './home-tabs/map-tab';
+import TicketsTab from './home-tabs/tickets-tab';
+import ProfileTab from './home-tabs/profile-tab';
 
 export {
     InitScreen,
@@ -18,5 +23,10 @@ export {
     EmailLoginScreen,
     PhoneVerificationScreen,
     InterestsSelectionScreen,
-    HomeScreen
+    // HomeScreen,
+
+    BrowseTab,
+    MapTab,
+    TicketsTab,
+    ProfileTab
 }

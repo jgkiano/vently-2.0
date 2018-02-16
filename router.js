@@ -1,5 +1,6 @@
 import { TabNavigator, StackNavigator } from 'react-navigation';
-
+import React, { Component } from 'react';
+import { Text } from 'react-native';
 import * as Screens from './main-app';
 
 const mainNavigatorOptions = {
@@ -9,8 +10,25 @@ const mainNavigatorOptions = {
     },
 };
 
+const tabNavigatorOptions = {
+    animationEnabled: false,
+    swipeEnabled: false,
+    navigationOptions: {
+        tabBarVisible: false
+    }
+}
+
 const MainNavigator = StackNavigator({
 
+    home: { screen: TabNavigator({
+        browse: { screen: Screens.BrowseTab },
+        map: { screen: Screens.MapTab },
+        tickets: { screen: Screens.TicketsTab },
+        profile: { screen: Screens.ProfileTab }
+    }, tabNavigatorOptions)},
+
+
+    // home: { screen: Screens.HomeScreen },
 
 
     init: { screen: Screens.InitScreen },
@@ -25,7 +43,7 @@ const MainNavigator = StackNavigator({
 
     interestsSelections: { screen: Screens.InterestsSelectionScreen },
 
-    home: { screen: Screens.HomeScreen },
+
 
 
 
