@@ -7,6 +7,8 @@ import EmailLoginScreen from './email-login';
 import PhoneVerificationScreen from './verify-phone';
 import InterestsSelectionScreen from './interests-selection';
 
+import HomeScreen from './home';
+
 export {
     InitScreen,
     WelcomeScreen,
@@ -15,5 +17,6 @@ export {
     SecondEmailRegistrationScreen,
     EmailLoginScreen,
     PhoneVerificationScreen,
-    InterestsSelectionScreen
+    InterestsSelectionScreen,
+    HomeScreen
 }

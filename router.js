@@ -11,7 +11,7 @@ const mainNavigatorOptions = {
 
 const MainNavigator = StackNavigator({
 
-    interestsSelections: { screen: Screens.InterestsSelectionScreen },
+
 
     init: { screen: Screens.InitScreen },
     welcome: { screen: Screens.WelcomeScreen },
@@ -22,6 +22,10 @@ const MainNavigator = StackNavigator({
     phoneVerification: { screen: Screens.PhoneVerificationScreen },
 
     emailLogin: { screen: Screens.EmailLoginScreen },
+
+    interestsSelections: { screen: Screens.InterestsSelectionScreen },
+
+    home: { screen: Screens.HomeScreen },
 
 
 

@@ -51,7 +51,7 @@ class EmailLoginScreen extends Component {
                 <View style={errorContainerStyle}>
                     <Text style={errorTextStyle}>Sorry, the credentials you've provided are not valid. Please try again</Text>
                 </View>
-                <FullButton text="LOGIN" />
+                <FullButton text="LOGIN" onPress={() => navigation.navigate('home')} />
                 <KeyBoardSpacer />
             </View>
         )

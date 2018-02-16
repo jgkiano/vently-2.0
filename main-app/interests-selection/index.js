@@ -134,6 +134,9 @@ class InterestsSelectionScreen extends Component {
             interetsContainer,
             infoTextStyle
         } = styles;
+        const {
+            navigation
+        } = this.props;
         return (
             <View style={parentStyle}>
                 <View style={contentContainerStyle}>
@@ -154,7 +157,7 @@ class InterestsSelectionScreen extends Component {
                         </Text>
                     </View>
                 </View>
-                <FullButton onPress={() => navigation.navigate('phoneVerification')} text="CONTINUE" />
+                <FullButton onPress={() => navigation.navigate('home')} text="CONTINUE" />
                 <KeyBoardSpacer />
             </View>
         );
