@@ -23,11 +23,20 @@ const EVENTS_DATA = [
 
 class BrowseTab extends Component {
 
+    state = {
+        refreshing: false
+    }
+
     _renderCenterComponent = () => {
+        const {
+            selectorContainer,
+            selectorTextStyle,
+            selectorIconStyle
+        } = styles;
         return (
-            <TouchableOpacity style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                <Text style={{ fontFamily: 'nregular', color: '#212121', fontSize: 16 }}>Selected for you</Text>
-                <View style={{ position: 'relative', top: 2}}>
+            <TouchableOpacity style={selectorContainer}>
+                <Text style={selectorTextStyle}>Selected for you</Text>
+                <View style={selectorIconStyle}>
                     <Entypo name="chevron-small-down" size={24} color="#212121" />
                 </View>
             </TouchableOpacity>
@@ -64,7 +73,11 @@ class BrowseTab extends Component {
         )
     }
 
-    _renderSeparator = () => <View style={{ marginVertical: 5 }} />
+    _renderSeparator = () => <View style={styles.separatorStyle} />
+
+    _handleRefresh = () => {
+        console.log('refreshing...');
+    }
 
     render() {
         const { navigation } = this.props;
@@ -81,11 +94,32 @@ class BrowseTab extends Component {
                         keyExtractor={(item, index) => index}
                         renderItem={this._renderItem}
                         ItemSeparatorComponent={this._renderSeparator}
+                        refreshing={this.state.refreshing}
+                        onRefresh={this._handleRefresh}
                     />
                 </View>
                 <BottomNavigation navigation={navigation} active='browse' />
             </View>
         );
+    }
+}
+
+const styles = {
+    selectorContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'center'
+    },
+    selectorTextStyle: {
+        fontFamily: 'nregular',
+        color: '#212121',
+        fontSize: 16
+    },
+    selectorIconStyle: {
+        position: 'relative', top: 2
+    },
+    separatorStyle: {
+        marginVertical: 5
     }
 }
 
