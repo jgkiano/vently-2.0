@@ -1,8 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableOpacity, Image } from 'react-native';
-import { BottomNavigation, Header } from './components';
-import { Entypo, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
+import { View, Text, TouchableOpacity, Image, FlatList } from 'react-native';
+import { BottomNavigation, Header, EventCard } from './components';
+import { Entypo, Feather } from '@expo/vector-icons';
 import { Icon } from 'native-base';
+
+const EVENTS_DATA = [
+    {
+        date: 'Tomorrow',
+        locationName: 'Ngong Racecourse',
+        name: 'Jameson Connects Live: TY DOLLA $ign',
+        price: 'KES 500 - KES 3000',
+        banner: 'https://i2.wp.com/www.mwendengao.com/wp-content/uploads/2017/11/Ty-Dolla-Sign-Jameson-Connects-Kenya.jpg?resize=1080%2C1080'
+    },
+    {
+        date: '23rd Feb',
+        locationName: 'Training Grounds',
+        name: 'Safaricom International Jazz Festival',
+        price: 'KES 500 - KES 2000',
+        banner: 'https://scontent.fnbo2-1.fna.fbcdn.net/v/t1.0-9/27752258_10159969802625084_4734251870543737453_n.jpg?oh=a5b13a9ef02e4ff32030622813c728a5&oe=5B2293AD'
+    },
+]
 
 class BrowseTab extends Component {
 
@@ -25,6 +42,30 @@ class BrowseTab extends Component {
         )
     }
 
+    _renderItem = ({ item, index }) => {
+        const {
+            date,
+            locationName,
+            name,
+            price,
+            banner,
+        } = item;
+        return (
+            <EventCard
+                date={date}
+                locationName={locationName}
+                name={name}
+                price={price}
+                banner={banner}
+                onEventPress={() => console.log('event pressed')}
+                onBookmarkPress={() => console.log('bookmark pressed')}
+                onSharePress={() => console.log('share pressed')}
+            />
+        )
+    }
+
+    _renderSeparator = () => <View style={{ marginVertical: 5 }} />
+
     render() {
         const { navigation } = this.props;
         return (
@@ -34,43 +75,13 @@ class BrowseTab extends Component {
                         centerComponent={this._renderCenterComponent}
                         rightComponent={this._renderRightComponent}
                     />
-                    <View style={{ marginHorizontal: 10, marginTop: 10 }}>
-                        <View>
-                            <View style={{ padding: 10 }}>
-                                <Image style={{ width: '100%', height: 200, borderRadius: 4 }} source={{ uri: 'https://i2.wp.com/www.mwendengao.com/wp-content/uploads/2017/11/Ty-Dolla-Sign-Jameson-Connects-Kenya.jpg?resize=1080%2C1080' }} />
-                            </View>
-                            <View  style={{ marginHorizontal: 13 }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                    <MaterialCommunityIcons style={{ marginRight: 15 }} name="bookmark-outline" size={28} color="#212121" />
-                                    <MaterialCommunityIcons name="share-variant" size={28} color="#212121" />
-                                </View>
-
-                                <Text style={{ fontFamily: 'nregular', color: '#8F8E94', fontSize: 12 }}>Tomorrow, Ngong Racecourse</Text>
-                                <Text style={{ fontFamily: 'nextrabold', color: '#424242', fontSize: 16 }}>
-                                    Jameson Connects Live: TY DOLLA $ign
-                                </Text>
-                                <Text style={{ fontFamily: 'nregular', color: '#0076FF', fontSize: 12 }}>KES 1500 - KES 3000</Text>
-                            </View>
-                        </View>
-                        <View style={{ marginVertical: 5 }} />
-                        <View>
-                            <View style={{ padding: 10 }}>
-                                <Image style={{ width: '100%', height: 200, borderRadius: 4 }} source={{ uri: 'https://i2.wp.com/www.mwendengao.com/wp-content/uploads/2017/11/Ty-Dolla-Sign-Jameson-Connects-Kenya.jpg?resize=1080%2C1080' }} />
-                            </View>
-                            <View  style={{ marginHorizontal: 13 }}>
-                                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
-                                    <MaterialCommunityIcons style={{ marginRight: 15 }} name="bookmark-outline" size={28} color="#212121" />
-                                    <MaterialCommunityIcons name="share-variant" size={28} color="#212121" />
-                                </View>
-
-                                <Text style={{ fontFamily: 'nregular', color: '#8F8E94', fontSize: 12 }}>Tomorrow, Ngong Racecourse</Text>
-                                <Text style={{ fontFamily: 'nextrabold', color: '#424242', fontSize: 16 }}>
-                                    Jameson Connects Live: TY DOLLA $ign
-                                </Text>
-                                <Text style={{ fontFamily: 'nregular', color: '#0076FF', fontSize: 12 }}>KES 1500 - KES 3000</Text>
-                            </View>
-                        </View>
-                    </View>
+                    <FlatList
+                        data={EVENTS_DATA}
+                        extraData={this.state}
+                        keyExtractor={(item, index) => index}
+                        renderItem={this._renderItem}
+                        ItemSeparatorComponent={this._renderSeparator}
+                    />
                 </View>
                 <BottomNavigation navigation={navigation} active='browse' />
             </View>
