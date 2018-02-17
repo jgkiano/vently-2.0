@@ -33,8 +33,11 @@ class BrowseTab extends Component {
             selectorTextStyle,
             selectorIconStyle
         } = styles;
+        const {
+            navigation
+        } = this.props;
         return (
-            <TouchableOpacity style={selectorContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('filter')} style={selectorContainer}>
                 <Text style={selectorTextStyle}>Selected for you</Text>
                 <View style={selectorIconStyle}>
                     <Entypo name="chevron-small-down" size={24} color="#212121" />
@@ -43,13 +46,13 @@ class BrowseTab extends Component {
         );
     }
 
-    _renderRightComponent = () => {
-        return (
-            <TouchableOpacity>
-                <Feather name="filter" size={24} color="#212121" />
-            </TouchableOpacity>
-        )
-    }
+    // _renderRightComponent = () => {
+    //     return (
+    //         <TouchableOpacity>
+    //             <Feather name="filter" size={24} color="#212121" />
+    //         </TouchableOpacity>
+    //     )
+    // }
 
     _renderItem = ({ item, index }) => {
         const {
@@ -86,7 +89,6 @@ class BrowseTab extends Component {
                 <View style={{ flex: 1 }}>
                     <Header
                         centerComponent={this._renderCenterComponent}
-                        rightComponent={this._renderRightComponent}
                     />
                     <FlatList
                         data={EVENTS_DATA}

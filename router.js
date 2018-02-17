@@ -27,7 +27,7 @@ const MainNavigator = StackNavigator({
         profile: { screen: Screens.ProfileTab }
     }, tabNavigatorOptions)},
 
-
+    filter: { screen: Screens.FilterScreen },
     // home: { screen: Screens.HomeScreen },
 
 

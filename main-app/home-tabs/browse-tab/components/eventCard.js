@@ -168,7 +168,7 @@ const styles = {
         width: '100%',
         height: 200,
         borderRadius: 4,
-        backgroundColor: '#E0E0E0',
+        backgroundColor: '#BDBDBD',
         position: 'absolute',
         zIndex: 1,
     },

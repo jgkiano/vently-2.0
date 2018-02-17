@@ -10,6 +10,7 @@ import InterestsSelectionScreen from './interests-selection';
 // import HomeScreen from './home';
 
 import BrowseTab from './home-tabs/browse-tab';
+import FilterScreen from './home-tabs/browse-tab/filter';
 import MapTab from './home-tabs/map-tab';
 import TicketsTab from './home-tabs/tickets-tab';
 import ProfileTab from './home-tabs/profile-tab';
@@ -26,6 +27,7 @@ export {
     // HomeScreen,
 
     BrowseTab,
+    FilterScreen,
     MapTab,
     TicketsTab,
     ProfileTab

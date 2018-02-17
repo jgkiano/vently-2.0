@@ -1,10 +1,20 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, Platform, StatusBar } from 'react-native';
+import { BackButton } from './';
 
 class Header extends Component {
 
     renderLeftComponent = () => {
         const { leftContainerStyle } = styles;
+
+        if(this.props.backNavigation) {
+            return (
+                <View style={{ ...leftContainerStyle, top: 2 }}>
+                    <BackButton onPress={() => this.props.backNavigation.goBack()} />
+                </View>
+            );
+        }
+
         if(this.props.leftComponent) {
             return (
                 <View style={leftContainerStyle}>
