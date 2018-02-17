@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, TouchableOpacity, TouchableWithoutFeedback, Animated } from 'react-native';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, MaterialIcons } from '@expo/vector-icons';
 
 class EventCard extends Component {
 
@@ -95,10 +95,11 @@ class EventCard extends Component {
                     <View style={actionsContainerStyle}>
                         <View style={actionContainerStyle}>
                             <TouchableOpacity onPress={onBookmarkPress}>
-                                <MaterialCommunityIcons
+                                <MaterialIcons
                                     style={iconStyle}
-                                    name="bookmark-outline"
-                                    size={28} color="#212121"
+                                    name={this.props.bookmarked ? "bookmark" : 'bookmark-border' }
+                                    size={28}
+                                    color={this.props.bookmarked ? "#0076FF" : '#212121' }
                                 />
                             </TouchableOpacity>
                         </View>
