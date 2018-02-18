@@ -104,8 +104,6 @@ class MapTab extends Component {
                     userLocationAnnotationTitle='There you are 😃'
                     customMapStyle={MapStyle}
                     ref={component => this._map = component}
-                    onRegionChange={(coords) => console.log(coords)}
-                    onRegionChangeComplete={(coords) => console.log('complete')}
                 >
                     <MapView.Marker
                         coordinate={{
@@ -150,7 +148,7 @@ class MapTab extends Component {
             });
         }
     }
-    
+
      render() {
         const { navigation } = this.props;
         const {
