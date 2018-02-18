@@ -20,6 +20,8 @@ const tabNavigatorOptions = {
 
 const MainNavigator = StackNavigator({
 
+    init: { screen: Screens.InitScreen },
+
     home: { screen: TabNavigator({
         browse: { screen: Screens.BrowseTab },
         map: { screen: Screens.MapTab },
@@ -28,10 +30,9 @@ const MainNavigator = StackNavigator({
     }, tabNavigatorOptions)},
 
     filter: { screen: Screens.FilterScreen },
-    // home: { screen: Screens.HomeScreen },
 
 
-    init: { screen: Screens.InitScreen },
+
     welcome: { screen: Screens.WelcomeScreen },
     login: { screen: Screens.LoginScreen },
 

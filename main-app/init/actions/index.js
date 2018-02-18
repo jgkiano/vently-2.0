@@ -5,5 +5,5 @@ import {
 
 export const startApp = (navigation) => (dispatch) => {
     dispatch({ type: INIT_ASSETS_FOUND, payload: assets });
-    navigation.navigate('welcome');
+    navigation.navigate('home');
 }
